@@ -80,4 +80,121 @@
     .navbar {
         padding: var(--spacing-md) calc(var(--spacing-xl) * 3);
     }
+}
+
+/* Carousel: Mobile Responsive */
+@media (max-width: 700px) {
+  .striking-section,
+  .split-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .split-half {
+    width: 100vw !important;
+    height: auto !important;
+    min-height: 180px;
+    border-radius: 1.2rem;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .split-center-line {
+    width: 100vw;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .split-label {
+    font-size: 1.1rem;
+    margin: 16px 0 0 16px;
+    padding: 0.4em 1em 0.4em 0.7em;
+  }
+  .navbar-content {
+    flex-direction: row;
+    padding: 0.7em 0.7em;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+  }
+  .navbar-logo {
+    font-size: 1.1rem;
+    padding: 0.2em 0.5em;
+    z-index: 102;
+  }
+  .navbar-spacer {
+    display: none;
+  }
+  .navbar-links {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 100vw;
+    background: rgba(24, 24, 27, 0.97);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0.5em 0 1em 0.7em;
+    z-index: 101;
+    display: none;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+  .nav-link {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1em 0.7em;
+    border-radius: 0;
+    border-bottom: 1px solid #3333;
+    color: #fff;
+    background: none;
+    text-align: left;
+  }
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    z-index: 103;
+    margin-left: auto;
+  }
+  .theme-toggle-group {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+/* Ripple Effect: Mobile Responsive */
+@media (max-width: 700px) {
+  .ripple-section {
+    min-height: 180px;
+    height: 28vh;
+    padding: 0;
+  }
+  .ripple-box {
+    min-width: 90vw;
+    min-height: 120px;
+    max-width: 98vw;
+    max-height: 220px;
+    width: 98vw;
+    height: 22vh;
+    padding: 1.2rem 0.5rem;
+    border-radius: 1.2rem;
+  }
+  #ripple-canvas {
+    border-radius: 1.2rem;
+  }
+  .ripple-instructions {
+    font-size: 1rem;
+  }
 } 

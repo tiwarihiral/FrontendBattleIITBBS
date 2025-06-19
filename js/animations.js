@@ -22,6 +22,23 @@
         const y = e.clientY - rect.top;
         spawnRipple(x, y);
     });
+    // Touch support for mobile
+    box.addEventListener('touchstart', function(e) {
+        if (e.touches.length > 0) {
+            const rect = box.getBoundingClientRect();
+            const x = e.touches[0].clientX - rect.left;
+            const y = e.touches[0].clientY - rect.top;
+            spawnRipple(x, y);
+        }
+    });
+    box.addEventListener('touchmove', function(e) {
+        if (e.touches.length > 0) {
+            const rect = box.getBoundingClientRect();
+            const x = e.touches[0].clientX - rect.left;
+            const y = e.touches[0].clientY - rect.top;
+            spawnRipple(x, y);
+        }
+    });
 
     function spawnRipple(x, y) {
         ripples.push({

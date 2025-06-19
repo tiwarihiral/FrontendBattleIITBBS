@@ -248,20 +248,35 @@ main {
 }
 
 @media (max-width: 700px) {
-    .split-container, .striking-section {
+    .striking-section,
+    .split-container {
         flex-direction: column;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
     }
-    .split-half, .split-center-line {
-        width: 100vw !important;
-        height: 50vh !important;
-        min-height: 180px;
+    .split-half {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 180px !important;
+        border-radius: 0 !important;
+        margin-bottom: 0 !important;
+        overflow: hidden !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        display: block !important;
+    }
+    .split-label {
+        font-size: 1.1rem;
+        margin: 16px 0 0 16px;
+        padding: 0.4em 1em 0.4em 0.7em;
+        position: relative;
+        top: 0;
+        left: 0;
     }
     .split-center-line {
-        width: 100vw;
-        height: 2px;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        display: none !important;
     }
 }
 
@@ -1209,11 +1224,47 @@ main {
 }
 .theme-toggle-label {
     color: white;
-    margin-right: 50px;
+    margin-right: 55px;
     margin-top: 7px;
     font-size: 1.05rem;
     font-weight: 500;
     opacity: 0.8;
     letter-spacing: 0.01em;
     user-select: none;
+}
+
+.hamburger {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    position: relative;
+    border-radius: 2px;
+    transition: background 0.2s;
+}
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s, top 0.3s, bottom 0.3s;
+}
+.hamburger::before {
+    top: -50px;
+}
+.hamburger::after {
+    bottom: -50px;
+}
+.nav-toggle.active .hamburger {
+    background: transparent;
+}
+.nav-toggle.active .hamburger::before {
+    transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.active .hamburger::after {
+    transform: translateY(-9px) rotate(-45deg);
 } 

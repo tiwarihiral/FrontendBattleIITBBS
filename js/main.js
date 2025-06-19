@@ -222,4 +222,22 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.restore();
     }
     drawChart();
+})();
+
+// Mobile Navbar Toggle
+(function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.navbar-links');
+    if (!navToggle || !navLinks) return;
+    navToggle.addEventListener('click', function(e) {
+        navLinks.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+    // Optional: close menu when a link is clicked (mobile UX)
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
 })(); 
