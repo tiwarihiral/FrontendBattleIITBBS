@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Battle</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="light-mode">
+    <!-- Navbar -->
+    <nav class="navbar beautiful-navbar">
+        <div class="navbar-content">
+            <span class="navbar-logo">Frontend Battle</span>
+            <div class="navbar-spacer"></div>
+            <div class="navbar-links">
+                <a href="#carousel-switch" class="nav-link">Carousel</a>
+                <a href="#carbon-graph" class="nav-link">Carbon Graph</a>
+                <a href="#brand-kits" class="nav-link">Brand Kits</a>
+                <a href="#parallax-section" class="nav-link">Parallax</a>
+                <a href="#ripple-section" class="nav-link">Ripple</a>
+                <a href="#stats-section" class="nav-link">Stats</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+        <div class="loader-progress-bar-wrapper">
+            <div class="loader-progress-bar-bg">
+                <div class="loader-progress-bar-fill" id="loaderBar"></div>
+            </div>
+        </div>
+        <div class="loader-counter" id="loaderCounter">000</div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle-group">
+        <span class="theme-toggle-label">Toggle mode</span>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="sun-icon" viewBox="0 0 24 24">
+                <path d="M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm0-2c.28 0 .5-.22.5-.5v-3c0-.28-.22-.5-.5-.5s-.5.22-.5.5v3c0 .28.22.5.5.5zm0 13c-.28 0-.5.22-.5.5v3c0 .28.22.5.5.5s.5-.22.5-.5v-3c0-.28-.22-.5-.5-.5zm8.5-6.5c0-.28-.22-.5-.5-.5h-3c-.28 0-.5.22-.5.5s.22.5.5.5h3c.28 0 .5-.22.5-.5zM5.5 12c0-.28-.22-.5-.5-.5H2c-.28 0-.5.22-.5.5s.22.5.5.5h3c.28 0 .5-.22.5-.5z"/>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24">
+                <path d="M12 3c.28 0 .5-.22.5-.5v-2c0-.28-.22-.5-.5-.5s-.5.22-.5.5v2c0 .28.22.5.5.5zm0 18c-.28 0-.5.22-.5.5v2c0 .28.22.5.5.5s.5-.22.5-.5v-2c0-.28-.22-.5-.5-.5zm10-10c0-.28-.22-.5-.5-.5h-2c-.28 0-.5.22-.5.5s.22.5.5.5h2c.28 0 .5-.22.5-.5zM3 11h-2c-.28 0-.5.22-.5.5s.22.5.5.5h2c.28 0 .5-.22.5-.5s-.22-.5-.5-.5z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Main Content (hidden initially) -->
+    <main id="mainContent" style="opacity:0; pointer-events:none;">
+        <!-- Carousel Switch Effect (Striking Effect) -->
+        <section id="carousel-switch" class="striking-section">
+            <div class="split-container">
+                <div class="split-half split-left">
+                    <span class="split-label">new</span>
+                </div>
+                <div class="split-center-line"></div>
+                <div class="split-half split-right">
+                    <span class="split-label">new</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carbon Graph Section (Embodied Carbon Emissions) -->
+        <section id="carbon-graph" class="carbon-graph-section">
+            <div class="carbon-graph-layout">
+                <div class="carbon-graph-left">
+                    <div class="carbon-graph-filter">
+                        <div class="filter-label">Filter by</div>
+                        <div class="filter-group">
+                            <div class="filter-type-label">Type</div>
+                            <button class="filter-btn active">Refurbishment</button>
+                            <button class="filter-btn">New build</button>
+                            <button class="filter-btn">All</button>
+                        </div>
+                        <div class="filter-group">
+                            <div class="filter-status-label">Status</div>
+                            <button class="filter-btn active">Complete</button>
+                            <button class="filter-btn">Estimate</button>
+                        </div>
+                    </div>
+                    <div class="carbon-graph-key">
+                        <div class="key-label">Key</div>
+                        <div class="key-item">
+                            <span class="key-line key-dashed"></span>
+                            <span>500 kgCO2e/m<sup>2</sup> - Embodied Carbon Target 2030</span>
+                        </div>
+                        <div class="key-item">
+                            <span class="key-line key-solid"></span>
+                            <span>600 kgCO2e/m<sup>2</sup> - Embodied Carbon Target 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carbon-graph-right">
+                    <div class="carbon-graph-title-group">
+                        <div class="carbon-graph-title-main">EMBODIED<br><span>CARBON<br>EMISSIONS</span></div>
+                        <div class="carbon-graph-intensity">Intensity measured by kgCO2e/m<sup>2</sup></div>
+                        <button class="carbon-graph-download">
+                            Download the data <span class="download-icon">&#8681;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="carbon-graph-chart-area">
+                <canvas id="carbon-bar-chart" width="1200" height="480" aria-label="Embodied Carbon Emissions Bar Chart"></canvas>
+            </div>
+        </section>
+
+        <!-- Brand Kits Cards Section (Pixel-perfect, pure HTML/CSS) -->
+        <section id="brand-kits" class="brand-kits-section">
+            <div class="brand-kits-card">
+                <h2 class="brand-kits-title">Brand Kits</h2>
+                <div class="brand-kit-list">
+                    <!-- Card 1: ECorp -->
+                    <div class="brand-kit-item" data-brand="ecorp">
+                        <span class="custom-checkbox" data-checkbox="ecorp"></span>
+                        <span class="brand-kit-cloud cloud-green">
+                            <span class="cloud-circle cloud-main"></span>
+                            <span class="cloud-circle cloud-accent"></span>
+                            <span class="cloud-circle cloud-white"></span>
+                        </span>
+                        <span class="brand-kit-name">ECorp</span>
+                        <span class="brand-kit-settings"><span class="settings-icon"></span></span>
+                    </div>
+                    <!-- Card 2: ICorp -->
+                    <div class="brand-kit-item" data-brand="icorp">
+                        <span class="custom-checkbox" data-checkbox="icorp"></span>
+                        <span class="brand-kit-cloud cloud-orange">
+                            <span class="cloud-circle cloud-main"></span>
+                            <span class="cloud-circle cloud-accent"></span>
+                            <span class="cloud-circle cloud-white"></span>
+                        </span>
+                        <span class="brand-kit-name">ICorp</span>
+                        <span class="brand-kit-settings"><span class="settings-icon"></span></span>
+                    </div>
+                    <!-- Card 3: The Agency (selected) -->
+                    <div class="brand-kit-item selected" data-brand="the-agency">
+                        <span class="custom-checkbox checked" data-checkbox="the-agency"></span>
+                        <span class="brand-kit-cloud cloud-red">
+                            <span class="cloud-circle cloud-main"></span>
+                            <span class="cloud-circle cloud-accent"></span>
+                            <span class="cloud-circle cloud-white"></span>
+                        </span>
+                        <span class="brand-kit-name">The Agency</span>
+                        <span class="brand-kit-settings"><span class="settings-icon"></span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parallax Section -->
+        <section id="parallax-section" class="parallax-section">
+            <div class="parallax-image-container">
+                <div class="parallax-image parallax-bg">
+                    <div class="parallax-overlay-text">
+                        <div class="parallax-label">Connection</div>
+                        <div class="parallax-title">Share quality time.<br>And space.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax-content">
+                <div class="parallax-content-left">
+                    <div class="parallax-content-title">A more engaging way to get together.</div>
+                </div>
+                <div class="parallax-content-right">
+                    <div class="parallax-content-desc">
+                        Apple Vision Pro makes it easy to collaborate and connect wherever you are. You can see FaceTime participants in life-size video tiles, or you can choose to use your spatial Persona and feel like you are sharing the same space with others. And use SharePlay to watch, listen, and play together with your favorite people.
+                    </div>
+                    <button class="parallax-btn">
+                        <span class="parallax-btn-icon">+</span>
+                        Learn more about connection
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ripple/Smoke Effect Section -->
+        <section id="ripple-section" class="ripple-section">
+            <div class="ripple-box">
+                <canvas id="ripple-canvas"></canvas>
+                <div class="ripple-instructions">See ripple effect here</div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats-section" class="stats-section">
+            <div class="stats-columns">
+                <!-- Column 1 -->
+                <div class="stats-col">
+                    <div class="stats-title">Managed portfolio carbon footprint</div>
+                    <div class="stats-unit">tCO2e</div>
+                    <div class="stats-big">45,048</div>
+                    <div class="stats-change up">
+                        <span class="stats-arrow">↑</span>
+                        <span class="stats-percent">16%</span>
+                        <span class="stats-from">from 2019</span>
+                    </div>
+                    <div class="stats-bars">
+                        <div class="stats-bar-row"><span>2022</span><div class="stats-bar"><div class="stats-bar-fill" style="width:90%"></div></div><span>45,048</span></div>
+                        <div class="stats-bar-row"><span>2021</span><div class="stats-bar"><div class="stats-bar-fill" style="width:28%"></div></div><span>14,111</span></div>
+                        <div class="stats-bar-row"><span>2020</span><div class="stats-bar"><div class="stats-bar-fill" style="width:65%"></div></div><span>32,813</span></div>
+                        <div class="stats-bar-row"><span>2019</span><div class="stats-bar"><div class="stats-bar-fill" style="width:75%"></div></div><span>38,673</span></div>
+                    </div>
+                    <div class="stats-link"><a href="#">See full breakdown of carbon footprint <span class="stats-link-arrow">→</span></a></div>
+                </div>
+                <!-- Column 2 -->
+                <div class="stats-col">
+                    <div class="stats-title">Managed portfolio energy intensity</div>
+                    <div class="stats-unit">kWh/m<sup>2</sup></div>
+                    <div class="stats-big">123</div>
+                    <div class="stats-change down">
+                        <span class="stats-arrow">↓</span>
+                        <span class="stats-percent">22%</span>
+                        <span class="stats-from">from 2019</span>
+                    </div>
+                    <div class="stats-bars">
+                        <div class="stats-bar-row"><span>2022</span><div class="stats-bar"><div class="stats-bar-fill" style="width:80%"></div></div><span>123</span></div>
+                        <div class="stats-bar-row"><span>2021</span><div class="stats-bar"><div class="stats-bar-fill" style="width:83%"></div></div><span>128</span></div>
+                        <div class="stats-bar-row"><span>2020</span><div class="stats-bar"><div class="stats-bar-fill" style="width:88%"></div></div><span>135</span></div>
+                        <div class="stats-bar-row"><span>2019</span><div class="stats-bar"><div class="stats-bar-fill" style="width:100%"></div></div><span>157</span></div>
+                    </div>
+                    <div class="stats-link"><a href="#">Download the data <span class="stats-link-arrow">↓</span></a></div>
+                </div>
+                <!-- Column 3 -->
+                <div class="stats-col">
+                    <div class="stats-title">Managed portfolio energy consumption</div>
+                    <div class="stats-unit">kWh</div>
+                    <div class="stats-big">47,790,662</div>
+                    <div class="stats-change down">
+                        <span class="stats-arrow">↓</span>
+                        <span class="stats-percent">27%</span>
+                        <span class="stats-from">from 2019</span>
+                    </div>
+                    <div class="stats-bars">
+                        <div class="stats-bar-row"><span>2022</span><div class="stats-bar"><div class="stats-bar-fill" style="width:90%"></div></div><span>47,790,662</span></div>
+                        <div class="stats-bar-row"><span>2021</span><div class="stats-bar"><div class="stats-bar-fill" style="width:93%"></div></div><span>49,324,077</span></div>
+                        <div class="stats-bar-row"><span>2020</span><div class="stats-bar"><div class="stats-bar-fill" style="width:92%"></div></div><span>48,784,205</span></div>
+                        <div class="stats-bar-row"><span>2019</span><div class="stats-bar"><div class="stats-bar-fill" style="width:100%"></div></div><span>65,198,706</span></div>
+                    </div>
+                    <div class="stats-link"><a href="#">Download the data <span class="stats-link-arrow">↓</span></a></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/brandkits.js"></script>
+</body>
+</html> 
